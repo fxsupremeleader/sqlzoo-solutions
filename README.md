@@ -13,7 +13,7 @@ The repository is organized by SQLZoo tutorial topics:
 | Module / Topic | Description | File Link |
 | :--- | :--- | :--- |
 | **01** | SELECT basics (getting started with columns and basic queries) | [01_select_basics.sql](./01_select_basics.sql) |
-| **02** | SELECT from WORLD (filtering, comparison operators) | [02_select_from_world.sql](./02_select_world.sql) |
+| **02** | SELECT from WORLD (filtering, comparison operators) | [02_select_from_world.sql]|
 | **03** | SELECT from NOBEL (sorting, wildcard searches, patterns) | [03_select_from_nobel.sql](./03_select_nobel.sql) |
 | **04** | SELECT within SELECT (subqueries) | [04_select_with_select.sql](./04_subqueries.sql) |
 | **05** | SUM and COUNT (aggregate functions, GROUP BY, HAVING) | [05_sum_and_count.sql](./05_sum_and_count.sql) |

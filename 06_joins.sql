@@ -52,29 +52,41 @@
 
 -- 8. For each team playing on 2026-07-01, show the city and the teamname
 
+        SELECT game.city, team.teamname
+        FROM game
+        JOIN team ON team.id = game.team1 OR team.id = game.team2
+        WHERE game.played = '2026-07-01'
 
+-- 9. For every goal scored on '2026-07-02' show the teamname, and the player who scored
 
--- 9. 
+        SELECT team.teamname, goal.player 
+        FROM game 
+        JOIN goal ON goal.game = game.id 
+        JOIN team ON goal.team = team.id 
+        WHERE game.played = '2026-07-02'
 
--- 10.  
+-- 10. For every goal scored in Mexico City show the date played, the player and that player's position (pos)
 
--- 11.  
+        SELECT game.played, goal.player, player.pos AS players_position
+        FROM  goal 
+        JOIN game ON goal.game = game.id
+        JOIN player ON goal.player = player.playername
+        WHERE game.city = 'Mexico City'
 
--- 12.  
+-- 11. For each goal scored by a defender, show the player, their teamname.
 
+        SELECT goal.player, team.teamname
+        FROM goal
+        JOIN player On goal.player= player.playername
+        JOIN team ON player.team= team.id
+        WHERE player.pos = 'DEF'
 
+-- 12.  For each goal scored in extra time, show the player, their position, teamname and city
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+        SELECT goal.player, player.pos AS position, team.teamname, game.city
+        FROM goal 
+        JOIN game ON goal.game=game.id
+        JOIN player ON goal.player=player.playername
+        JOIN team ON player.team=team.id
+        WHERE goal.gtime BETWEEN 91 AND 120
 
